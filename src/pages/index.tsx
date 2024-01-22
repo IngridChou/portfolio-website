@@ -1,118 +1,71 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from 'next/link'
+import { Button, ButtonGroup } from "@mui/material";
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between p-36 bg-gradient-to-t from-pink via-white to-blue text-white pb-80`}
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <header className='flex flex-row items-center justify-between px-32 bg-gradient-to-b from-black/70 to-black/50 min-w-full fixed top-0 rounded-b-2xl'>
+        <div className='flex flex-row items-center gap-1'>
+          <Button variant="text">
+            <Link href='/'>
+              <Image
+                src='/images/logo.png'
+                width={70}
+                height={70}
+                alt='logo'
+              />
+            </Link>
+          </Button>
+          <h1>Ingrid Chou</h1>
         </div>
+        <div className='flex flex-row gap-10'>
+          <Link href='/'>Home</Link>
+          <Link href='/'>Portfolio</Link>
+          <Link href='/'>About</Link>
+          <Link href='/'>Contact</Link>
+        </div>
+      </header>
+      <div className="flex flex-row justify-between min-w-full px-15">
+        <h1 className='text-4xl pb-10 text-black'>Portfolio</h1>
+        <ButtonGroup variant="text" className="flex items-center bg-gradient-to-r from-black/55 via-black/65 to-black/55 rounded-2xl h-12">
+          <Button className="text-white normal-case px-6">Projects</Button>
+          <Button className="text-white normal-case px-6">Other</Button>
+        </ButtonGroup>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col gap-10 w-full">
+        <div className="bg-gradient-to-r from-black/55 via-black/65 to-black/55 rounded-2xl h-96 w-full p-20">
+          <div className="flex flex-row items-start justify-between px-15">
+            <div className="flex flex-col w-2/4 gap-5">
+              <h2 className="text-3xl">WhiteStone</h2>
+              <p>WhiteStone is a machine learning dental scanning app designed for colorblind and low-income individuals. It aids users in assessing their dental health through mouth pictures, aiming to reduce the need for frequent dental checkups.</p>
+              <Button variant="contained" className="hover:bg-gray-200 bg-white text-black normal-case rounded-lg w-1/4">
+                <Link href='/project'>View Project</Link>
+              </Button>
+            </div>
+            <Image
+              className="rounded-xl"
+              src='/images/whitestone.png'
+              width={350}
+              height={200}
+              alt='whitestone'
+            />
+          </div>
+        </div>
+        {/* <div className="bg-gradient-to-r from-black/55 via-black/65 to-black/55 rounded-2xl h-96 w-full p-20">
+        <div>
+          <div>
+            <h2>Project Title</h2>
+            <p>Project des</p>
+            <Button variant="contained" className="bg-white text-black normal-case rounded-lg">View Project</Button>
+          </div>
+        </div>
+      </div> */}
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <footer className='flex items-center justify-center bg-gradient-to-b from-black/50 to-black/90 min-w-full absolute bottom-0 h-44'>
+      </footer>
     </main>
   );
 }
